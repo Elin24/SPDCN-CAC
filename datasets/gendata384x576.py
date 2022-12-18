@@ -35,7 +35,7 @@ with open(os.path.join(root, 'ImageClasses_FSC147.txt')) as f:
 can_h, can_w = 384, 576
 
 imgdir = f'images_{can_h}x{can_w}'
-os.makedirs(imgdir, exist_ok=True)
+os.makedirs(os.path.join(root, imgdir), exist_ok=True)
 
 info = dict()
 for jpg, label in tqdm.tqdm(anno.items()):
@@ -80,5 +80,5 @@ for jpg, label in tqdm.tqdm(anno.items()):
         category = cates[imid]
     )
 
-with open(f'fsc147_{can_h}x{can_w}.json', 'w+') as f:
+with open(os.path.join(root, f'fsc147_{can_h}x{can_w}.json'), 'w+') as f:
     json.dump(info, f)
