@@ -57,7 +57,7 @@ for jpg, label in tqdm.tqdm(anno.items()):
 
     # resize box
     boxes = label['box_examples_coordinates']
-    nboxes = np.array(boxes, dtype='float32') - 1 # ((w1, h1), (w1, h2), (w2, h2), (w2, h1)) # N 4 2
+    nboxes = np.array(boxes, dtype='float32') # ((w1, h1), (w1, h2), (w2, h2), (w2, h1)) # N 4 2
     nboxes[:, :, 0] = nboxes[:, :, 0] * rw + pw
     nboxes[:, :, 1] = nboxes[:, :, 1] * rh + ph
     box_lt = nboxes[:, 0, :]
