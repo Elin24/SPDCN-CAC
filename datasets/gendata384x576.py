@@ -67,7 +67,7 @@ for jpg, label in tqdm.tqdm(anno.items()):
     
     # relocate point
     pots = label['points'] 
-    npots = np.array(pots) - 1
+    npots = np.array(pots)
     npots[:, 0] = npots[:, 0] * rw + pw
     npots[:, 1] = npots[:, 1] * rh + ph
     resize_pots = npots.tolist()
