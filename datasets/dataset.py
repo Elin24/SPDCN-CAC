@@ -53,6 +53,8 @@ class FSC147(data.Dataset):
         points = torch.tensor(sample['points']).round().long() # N x (w, h)
         boxes = torch.clip(torch.tensor(sample['boxes'][:3]).view(3, 4).round().long(), min=0) # 3 x ((left, top), (right, bottom))
         dotmap = np.zeros((1, h, w), dtype=np.float32)
+        points[:, 1] = torch.clip(points[:, 1], min=0, max=h-1)
+        points[:, 0] = torch.clip(points[:, 0], min=0, max=w-1)
         dotmap[0, points[:, 1], points[:, 0]] = 1
 
         image, dotmap = self.normalfunc(image, dotmap)
@@ -82,9 +84,9 @@ if __name__ == '__main__':
             std = self.std.to(tensor.device).view(1, 3, 1, 1)
             return tensor * std + mean
 
-    dataset = FSC147('/opt/visal/home/wlin38/coey/gsc147/', 'train')
+    dataset = FSC147('/data/home/elin24/Hercules/coey/gsc147', 'train')
     import tqdm
     denormal = DeNormalize(mean=[0.56347245, 0.50660025, 0.45908741], std=[0.28393339, 0.2804536 , 0.30424776])
     bs_means = []
-    for image, boxes, patch, dotmap, imid in tqdm.tqdm(dataset):
+    for image, boxes, patch, dotmap in tqdm.tqdm(dataset):
         break
