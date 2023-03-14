@@ -9,6 +9,16 @@ official code for BMVC-2022 paper "Scale-Prior Deformable Convolution for Exempl
 # Requirement
 
 We use [Singularity](https://docs.sylabs.io/guides/3.3/user-guide/index.html) to build the enviroment. Download our enviroment: [excalibur.sif](https://portland-my.sharepoint.com/:u:/g/personal/wlin38-c_my_cityu_edu_hk/ESJUgH4yrsxPoZlOEfA9dCYBweBOif4vKVsBgRNqJH6E8Q?e=lWuBJH).
+If you'd like to create environement yourself, the following python packages are required:
+```
+pytorch == 1.9.0
+torchvision == 0.10.0
+mmcv == 1.3.13
+timm == 0.4.12
+termcolor
+yacs
+einops
+```
 
 # Data Preparation
 
@@ -19,7 +29,8 @@ We use [Singularity](https://docs.sylabs.io/guides/3.3/user-guide/index.html) to
 # Training
 
 - modify the `datapath` in `run.sh` to the local path of FSC-147 dataset
-- `singularity run.sh`
+- using singularity: `singularity exec --bind  --nv path_to_excalibur.sif ./run.sh`
+- using your own environment: `./run.sh`
 
 A training log is shown in `md-files/training.log`, and corresponding checkpoint is uploaded [here](https://portland-my.sharepoint.com/:u:/g/personal/wlin38-c_my_cityu_edu_hk/EeooOdsveWJDi5i6BRZOzREB3i_HXWip5jjQmolJU518tA?e=4cHwKl).
 
