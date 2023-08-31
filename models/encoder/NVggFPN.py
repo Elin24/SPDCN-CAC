@@ -8,7 +8,7 @@ class NVggFPN(nn.Module):
     def __init__(self, pretrained=True):
         super(NVggFPN, self).__init__()
         vgg = models.vgg19(pretrained=pretrained)
-        mods = list(vgg.features.children())[:23]
+        mods = list(vgg.features.children())[:27]
 
         self.encoder = nn.Sequential(*mods)
 
