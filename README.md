@@ -34,6 +34,10 @@ einops
 
 A training log is shown in `md-files/training.log`, and corresponding checkpoint is uploaded [here](https://portland-my.sharepoint.com/:u:/g/personal/wlin38-c_my_cityu_edu_hk/EeooOdsveWJDi5i6BRZOzREB3i_HXWip5jjQmolJU518tA?e=4cHwKl).
 
+# Inference Demo
+
+A demo is presented in `demo.ipynb`. You can let `config.resume` in it be the path to the checkpoint and know about how to run our model.
+
 # Citation
 
 ```
