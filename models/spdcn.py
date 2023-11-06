@@ -7,7 +7,7 @@ from .encoder import Vgg19FPN
 from .decoder import COMPSER
 
 class SPDCN(nn.Module):
-    def __init__(self, config, monemtum=False):
+    def __init__(self, config):
         super().__init__()
         self.encoder = Vgg19FPN.Vgg19FPN()
         feadim = self.encoder.outdim()
@@ -17,7 +17,6 @@ class SPDCN(nn.Module):
         self.decoder = COMPSER.COMPSER(feadim)
         self.factor = config.FACTOR
 
-        self.momentum = monemtum
 
     def forward(self, image, boxes):
         bsize = torch.stack((boxes[:, 4] - boxes[:, 2], boxes[:, 3] - boxes[:, 1]), dim=-1)
