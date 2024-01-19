@@ -32,7 +32,7 @@ einops
 - using singularity: `singularity exec --bind  --nv path_to_excalibur.sif ./run.sh`
 - using your own environment: `./run.sh`
 
-A training log is shown in `md-files/training.log`, and corresponding checkpoint is uploaded [here](https://portland-my.sharepoint.com/:u:/g/personal/wlin38-c_my_cityu_edu_hk/EeooOdsveWJDi5i6BRZOzREB3i_HXWip5jjQmolJU518tA?e=4cHwKl).
+A training log is shown in `md-files/training.log`, and corresponding checkpoint is uploaded [here](https://portland-my.sharepoint.com/:u:/g/personal/wlin38-c_my_cityu_edu_hk/EVXuLRT6C6JCm57r3gI4ORgBqGH4PYbQhk182pqLNgcZ5w?e=uePkwp).
 
 # Inference Demo
 
