@@ -51,4 +51,10 @@ url       = {https://bmvc2022.mpi-inf.mpg.de/0313.pdf}
 }
 ```
 
+# License and Attribution
 
+Original SPDCN-CAC source code is licensed under the [MIT License](LICENSE). Commercial use, modification, and redistribution are permitted, including in proprietary products, provided that the applicable copyright and license notices are retained in copies or substantial portions of the software.
+
+For source attribution, please identify this project as **SPDCN-CAC by Wei Lin and contributors** and link to https://github.com/Elin24/SPDCN-CAC. If you use this work in research, please cite the paper above.
+
+Third-party code retains its original licenses and notices; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). This source-code license does not relicense the paper, external datasets, third-party pretrained weights, or separately distributed checkpoints.
